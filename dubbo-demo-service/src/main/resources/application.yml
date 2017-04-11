@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+
+spring:
+  application:
+    name: dubbo-demo
+
+  aop: 
+    auto: true
+    proxy-target-class: true
+
+  datasource:
+    name: masterDataSource
+    url: jdbc:mysql://localhost:3306/xiaoniu_user
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      maxActive: 200
+      initialSize: 5
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnReturn: false
+      testOnBorrow: false
+  dubbo:
+    application:
+      name: ${spring.application.name}
+    protocol:
+      name: feign
+      port: ${server.port}
+    registry:
+      protocol: zookeeper
+      address: localhost:2181
+    scan: com.example
+mybatis:
+  mapper-locations:
+    - classpath:com/example/dao/*.xml
+  type-aliases-package: com.example.dao.model
+
+logging:
+  level:
+    root: info
+    com.example.dao: debug
+  file: ${spring.application.name}.log
+management:
+  security:
+    enabled: false
+flyway:
+  baseline-on-migrate: true

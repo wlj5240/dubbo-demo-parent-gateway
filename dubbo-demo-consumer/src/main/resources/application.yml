@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+
+spring:
+  application:
+    name: dubbo-demo-consumer
+  dubbo:
+    application:
+      name: ${spring.application.name}
+    protocol:
+      name: feign
+      port: ${server.port}
+    registry:
+      protocol: zookeeper
+      address: localhost:2181
+    scan: com.example
+
+logging:
+  level:
+    root: info
+  file: ${spring.application.name}.log
