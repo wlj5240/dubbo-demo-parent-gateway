@@ -25,9 +25,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>
+            <groupId>com.github.wu191287278</groupId>
             <artifactId>spring-boot-starter-dubbo</artifactId>
-            <version>1.4.5-SNAPSHOT</version>
         </dependency>
 
         <dependency>

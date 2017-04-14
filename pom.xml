@@ -28,6 +28,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.github.wu191287278</groupId>
+                <artifactId>spring-boot-starter-dubbo</artifactId>
+                <version>1.4.5</version>
+            </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
