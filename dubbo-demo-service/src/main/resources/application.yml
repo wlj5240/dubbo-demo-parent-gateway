@@ -30,9 +30,9 @@ spring:
   dubbo:
     application:
       name: ${spring.application.name}
-    protocol:
-      name: feign
-      port: ${server.port}
+#    protocol:
+#      name: feign
+#      port: ${server.port}
     registry:
       protocol: zookeeper
       address: localhost:2181

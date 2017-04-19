@@ -1,5 +1,7 @@
 package com.example.service;
 
+import com.alibaba.boot.dubbo.DubboClient;
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.example.model.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.MediaType;
@@ -12,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created on 2017/04/11 15:49
  */
 @FeignClient(path = "/user")
+@DubboClient(protocol = "feign", value = @Reference(timeout = 10000, version = "1.0.0"))
 public interface UserService {
-
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     User selectByPrimaryKey(@PathVariable("id") Long id);
