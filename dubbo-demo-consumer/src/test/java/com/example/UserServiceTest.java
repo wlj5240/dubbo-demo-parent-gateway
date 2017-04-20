@@ -37,7 +37,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         userService.updateByPrimaryKey(new User()
                 .setId(2L)
                 .setUsername("test")
@@ -47,7 +47,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testDelete(){
+    public void testDelete() {
         userService.deleteByPrimaryKey(1L);
     }
 }

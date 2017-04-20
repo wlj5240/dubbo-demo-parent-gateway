@@ -20,3 +20,6 @@ logging:
   level:
     root: info
   file: ${spring.application.name}.log
+management:
+  security:
+    enabled: false
