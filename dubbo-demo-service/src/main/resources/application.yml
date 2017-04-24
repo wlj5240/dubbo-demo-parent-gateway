@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 
 spring:
@@ -34,8 +34,10 @@ spring:
 #      name: feign
 #      port: ${server.port}
     registry:
-      protocol: zookeeper
-      address: localhost:2181
+      protocol: hazelcast
+      address: 224.5.6.7:1234 #?managementCenter=http://localhost:8080/mancenter
+#      protocol: multicast
+#      address: 224.5.6.7:1234?unicast=false
     scan: com.example
 mybatis:
   mapper-locations:
