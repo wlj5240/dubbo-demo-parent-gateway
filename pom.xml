@@ -99,6 +99,7 @@
         <module>dubbo-demo-service</module>
         <module>dubbo-demo-api</module>
         <module>dubbo-demo-consumer</module>
+        <module>dubbo-demo-gateway</module>
     </modules>
 
     <properties>
