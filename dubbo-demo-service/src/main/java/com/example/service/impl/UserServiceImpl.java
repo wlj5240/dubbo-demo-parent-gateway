@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@Service(version = "1.0.0", protocol = {"dubbo","feign"}, timeout = 10000) //该注解仅仅是描述接口使用,并不会造成多次实例化
+@Service(version = "1.0.0", protocol = {"dubbo","feign"}, filter = "userServiceFilter",timeout = 10000) //该注解仅仅是描述接口使用,并不会造成多次实例化
 @RequestMapping(value = "/user/")
 public class UserServiceImpl implements UserService {
 

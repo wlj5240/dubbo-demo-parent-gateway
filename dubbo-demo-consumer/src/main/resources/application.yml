@@ -12,9 +12,10 @@ spring:
 #      name: feign
 #      port: ${server.port}
     registry:
-      protocol: zookeeper
-      address: localhost:2181
-    scan: com.example
+      protocol: hazelcast
+#      address: 224.5.6.7:1234?managementCenter=http://localhost:8080/mancenter
+      address: 224.5.6.7:1234
+    scan: com.example.service
 
 logging:
   level:
