@@ -32,7 +32,7 @@
             <dependency>
                 <groupId>com.github.wu191287278</groupId>
                 <artifactId>spring-boot-starter-dubbo</artifactId>
-                <version>1.5.3</version>
+                <version>1.5.32</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -100,6 +100,7 @@
         <module>dubbo-demo-api</module>
         <module>dubbo-demo-consumer</module>
         <module>dubbo-demo-gateway</module>
+        <module>dubbo-trace</module>
     </modules>
 
     <properties>

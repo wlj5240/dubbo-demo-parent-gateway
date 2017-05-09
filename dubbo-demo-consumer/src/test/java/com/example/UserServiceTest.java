@@ -27,12 +27,16 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testInsert() {
-        userService.insert(new User()
-                .setUsername("test")
-                .setPassword("123456")
-                .setCreatedTime(new Date())
-                .setAddress("北京市"));
+    public void testInsert() throws InterruptedException {
+        for (long i = 0; i < 1000; i++) {
+            Thread.sleep(10);
+            userService.insert(new User()
+                    .setId(i)
+                    .setUsername("test")
+                    .setPassword("123456")
+                    .setCreatedTime(new Date())
+                    .setAddress("北京市"));
+        }
 
     }
 

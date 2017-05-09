@@ -30,9 +30,9 @@ spring:
   dubbo:
     application:
       name: ${spring.application.name}
-#    protocol:
-#      name: feign
-#      port: ${server.port}
+    protocol:
+      name: dubbo
+      port: 20881
     registry:
       protocol: hazelcast
       address: 224.5.6.7:1234
@@ -40,6 +40,7 @@ spring:
 #      protocol: multicast
 #      address: 224.5.6.7:1234?unicast=false
     scan: com.example.service.impl
+
 mybatis:
   mapper-locations:
     - classpath:com/example/dao/*.xml

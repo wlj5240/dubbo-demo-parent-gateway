@@ -1,0 +1,10 @@
+server:
+  port: 9411
+
+spring:
+  application:
+    name: dubbo-trace
+
+management:
+  security:
+    enabled: false

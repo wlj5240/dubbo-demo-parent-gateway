@@ -1,9 +1,11 @@
 package com.example;
 
 import com.alibaba.boot.dubbo.EnableDubboAutoConfiguration;
+import com.alibaba.dubbo.config.ProtocolConfig;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -29,6 +31,12 @@ public class DubboDemoApplication {
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(DubboDemoApplication.class, args);
+    }
+
+
+    @Bean
+    public ProtocolConfig feignProtocolConfig(@Value("${server.port}")Integer port){
+        return new ProtocolConfig("feign",port);
     }
 
 }
