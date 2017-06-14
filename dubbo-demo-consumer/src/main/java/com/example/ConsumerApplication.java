@@ -21,4 +21,6 @@ public class ConsumerApplication {
     public ProtocolConfig feignProtocolConfig(@Value("${server.port}")Integer port){
         return new ProtocolConfig("feign",port);
     }
+
+
 }
